@@ -18,6 +18,9 @@ public class VendorTest {
     public void addMoneyTest(){
         vendor.addMoney(10);
         assertEquals(10, vendor.getBalance(), 0.001);
+    }
+    @Test
+    public void buyItemTest(){
 
     }
 
