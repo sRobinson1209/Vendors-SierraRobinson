@@ -92,6 +92,14 @@ class Vendor {
             System.out.println("Item " + name + "not found.");
         }
     }
+    void applyDiscount(String name, double discountPercent){
+        if(Stock.containsKey(name)){
+            Stock.get(name).price *= (1 - discountPercent /100);
+        }
+    }
+    void bestSellers(String name){
+        System.out.println(name + " Has been marked a best seller!");
+    }
 }
 
 class Examples {

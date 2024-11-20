@@ -58,6 +58,15 @@ public class VendorTest {
         Item item = new Item(5, 3, "King sized sour skittles");
         assertEquals("King sized sour skittles" ,item.getDescription());
     }
+    @Test
+    void applyDiscountTest(){
+        vendor.applyDiscount("Candy", 10);
+        assertEquals(1.125, vendor.Stock.get("Candy").price, 0.01);
+    }
+    @Test
+    void bestSellerTest(){
+        vendor.bestSellers("Gum");
+    }
 
 }
 
