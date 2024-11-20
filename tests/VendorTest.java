@@ -53,6 +53,11 @@ public class VendorTest {
         vendor.removeItem("Gum");
         Assertions.assertFalse(vendor.Stock.containsKey("Gum"));
     }
+    @Test
+    void getDescriptionTest(){
+        Item item = new Item(5, 3, "King sized sour skittles");
+        assertEquals("King sized sour skittles" ,item.getDescription());
+    }
 
 }
 

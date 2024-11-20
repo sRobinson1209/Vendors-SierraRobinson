@@ -12,8 +12,8 @@ class Vendor {
     private HashMap<String, Integer> purchaseHistory = new HashMap<>();
 
     Vendor(int numCandy, int numGum) {
-        Stock.put("Candy", new Item(1.25, numCandy));
-        Stock.put("Gum", new Item(.5, numGum));
+        Stock.put("Candy", new Item(1.25, numCandy,"Chocolate Bar"));
+        Stock.put("Gum", new Item(.5, numGum, "Orbit Spreamint Gum"));
         this.balance = 0;
     }
 
@@ -71,7 +71,7 @@ class Vendor {
         if(Stock.containsKey(name)){
             Stock.get(name).restock(amount);
         } else {
-            Stock.put(name, new Item(price, amount));
+            Stock.put(name, new Item(price, amount, name));
         }
         System.out.println(name + "Restocked with " + amount + "Pieces");
     }
