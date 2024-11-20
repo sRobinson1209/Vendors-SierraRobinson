@@ -48,5 +48,11 @@ public class VendorTest {
         Assertions.assertFalse(vendor.Stock.containsKey("Candy"));
     }
 
+    @Test
+    void removeItemTest(){
+        vendor.removeItem("Gum");
+        Assertions.assertFalse(vendor.Stock.containsKey("Gum"));
+    }
+
 }
 

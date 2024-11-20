@@ -84,6 +84,14 @@ class Vendor {
             System.out.println("Item "+ oldName +"Not found");
         }
     }
+    void removeItem(String name){
+        if(Stock.containsKey(name)){
+            Stock.remove(name);
+            System.out.println("Item " + name + " removed from stock.");
+        } else {
+            System.out.println("Item " + name + "not found.");
+        }
+    }
 }
 
 class Examples {
