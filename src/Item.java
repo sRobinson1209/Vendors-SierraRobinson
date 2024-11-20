@@ -1,7 +1,7 @@
 import java.util.HashMap;
 
 class Item {
-    //public HashMap<Object, Object> Stock;
+
     double price;
     int stock;
     String description;

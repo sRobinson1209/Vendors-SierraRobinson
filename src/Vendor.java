@@ -13,7 +13,7 @@ class Vendor {
 
     Vendor(int numCandy, int numGum) {
         Stock.put("Candy", new Item(1.25, numCandy,"Chocolate Bar"));
-        Stock.put("Gum", new Item(.5, numGum, "Orbit Spreamint Gum"));
+        Stock.put("Gum", new Item(.50, numGum, "Orbit Spearmint Gum"));
         this.balance = 0;
     }
 
@@ -50,7 +50,7 @@ class Vendor {
         if (Stock.containsKey(name)) {
             Item item = Stock.get(name);
             if (balance >= item.price) {
-                if (item.stock > 0) { // Assuming getStock() checks item quantity
+                if (item.stock > 0) {
                     item.purchase(1);
                     this.balance = this.balance - item.price;
 
@@ -99,6 +99,13 @@ class Vendor {
     }
     void bestSellers(String name){
         System.out.println(name + " Has been marked a best seller!");
+    }
+    void showVendorInventory(){
+        for(String itemName: Stock.keySet()){
+           Item item  = Stock.get(itemName);
+           System.out.println("- "+ itemName + ", $ " + item.price + ", Stock- "+ item.stock);
+
+        }
     }
 }
 
